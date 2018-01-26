@@ -3,13 +3,8 @@
 FQDN:         <%= @fqdn %> (<%= @ipaddress %>)
 Processortype:<%= @processor0 %>
 Processors:   <%=  @processorcount %>
-Kernel:       <%= @kernel %>
-Memory Free:  <%= @memoryfree %>
+Memory:	      <%= @memory %>
 PDU:          <%= @e_pdu %>
-<% if @role -%> 
-  Role: <%= @role %>
-<% end -%>
-<% if @profile -%> 
-  Profile: <%= @profile %>
-<% end -%>
+<% if @role -%>Role: <%= @role %><% end -%>
+<% if @profile -%>Profile: <%= @profile %><% end -%>
 
