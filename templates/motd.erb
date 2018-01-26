@@ -1,10 +1,16 @@
 <%= @operatingsystem %> <%= @operatingsystemrelease %> <%= @architecture %>
 
-FQDN:         <%= @fqdn %> (<%= @ipaddress %>)
+FQDN:         <%= @fqdn %> (<%= @ipaddress_vnet1 ||  @ipaddress_vnic1 || @ipaddress %>)
 Processortype:<%= @processor0 %>
+<% if @processorcount.to_i > 1 -%>
 Processors:   <%=  @processorcount %>
-Memory:	      <%= @memory %>
-PDU:          <%= @e_pdu %>
-<% if @role -%>Role: <%= @role %><% end -%>
-<% if @profile -%>Profile: <%= @profile %><% end -%>
-
+<% end -%>
+Memory:	      <%= @memorysize %>
+PDU:          <%= @e_pdu || @pdu %>
+Uptime:       <%= @uptime %>
+<% if @role -%>
+Role: <%= @role %>
+<% end -%>
+<% if @profile -%>
+Profile:      <%= @profile %>
+<% end -%>
